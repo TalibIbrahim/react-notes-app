@@ -1,0 +1,22 @@
+.sidebar-hidden {
+  transition: 0.4s ease-in;
+  transform: translateX(-100%);
+  /* position: absolute; */
+}
+
+.sidebar-show {
+  transition: 0.4s ease-in;
+  transform: translateX(0);
+}
+
+.toolbar-transition {
+  transition: 0.4s ease-in;
+}
+
+.textarea-transition {
+  transition: 0.4s ease-in;
+}
+
+.button-transition {
+  transition: 0.3s ease-in;
+}
