@@ -36,12 +36,34 @@ const NoteText = (props) => {
   };
 
   const focusLossHandler = () => {
-    let key = userInput.key ? userInput.key : Math.random();
-    setUserInput({ ...userInput, key });
-    props.onSave({
-      [key]: { heading: userInput.heading, text: userInput.text },
-    });
+    if (userInput.heading !== "") {
+      let key = userInput.key ? userInput.key : Math.random();
+      setUserInput({ ...userInput, key });
+      props.onSave({
+        [key]: { heading: userInput.heading, text: userInput.text },
+      });
+    }
   };
+
+  const autoSaveInterval = 2000;
+
+  const autoSave = () => {
+    if (userInput.heading !== "") {
+      let key = userInput.key ? userInput.key : Math.random();
+      setUserInput({ ...userInput, key });
+      props.onSave({
+        [key]: { heading: userInput.heading, text: userInput.text },
+      });
+    }
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      autoSave();
+    }, autoSaveInterval);
+
+    return () => clearInterval(intervalId);
+  }, [autoSaveInterval, autoSave]);
 
   return (
     <div
@@ -59,7 +81,7 @@ const NoteText = (props) => {
         onChange={headingChangeHandler}
         value={userInput.heading}
         onBlur={focusLossHandler}
-        className="w-full border-b border-neutral-200 py-3  outline-none text-center  text-2xl font-semibold"
+        className="w-full border-b border-neutral-200 py-4  outline-none text-center  text-xl sm:text-2xl lg:text-3xl font-semibold"
       ></input>
 
       <textarea
@@ -68,7 +90,7 @@ const NoteText = (props) => {
         onChange={textChangeHandler}
         onBlur={focusLossHandler}
         value={userInput.text}
-        className="w-full h-full resize-none p-4 border-none outline-none"
+        className="w-full h-full resize-none text-lg lg:text-2xl p-4 border-none outline-none"
       />
     </div>
   );

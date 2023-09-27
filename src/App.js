@@ -82,7 +82,7 @@ function App() {
       />
 
       {selectedNote ? (
-        <div className="relative flex h-full max-w-full flex-1 overflow-y-scroll">
+        <div className="relative flex  h-full max-w-full flex-1 overflow-y-scroll">
           <div className="flex h-full max-w-full flex-1 flex-col">
             <Note
               onNewNote={newNoteHandler}

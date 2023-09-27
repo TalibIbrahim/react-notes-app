@@ -2,11 +2,14 @@
   transition: 0.4s ease-in;
   transform: translateX(-100%);
   /* position: absolute; */
+  flex-basis: 0px;
+  padding: 0.75rem 0;
 }
 
 .sidebar-show {
   transition: 0.4s ease-in;
   transform: translateX(0);
+  flex-basis: 350px;
 }
 
 .toolbar-transition {
@@ -19,4 +22,26 @@
 
 .button-transition {
   transition: 0.3s ease-in;
+}
+
+.list-container {
+  min-width: 300px;
+}
+
+@media screen and (max-width: 1024px) {
+  .list-container {
+    min-width: 225px;
+  }
+  .sidebar-show {
+    flex-basis: 250px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .list-container {
+    min-width: 125px;
+  }
+  .sidebar-show {
+    flex-basis: 150px;
+  }
 }

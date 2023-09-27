@@ -8,11 +8,11 @@ const NoteToolbar = (props) => {
   const styles = " w-full toolbar-transition flex justify-between  z-10 ";
 
   let btnClass =
-    "button-transition text-yellow-400 material-symbols-outlined text-3xl font-normal hover:text-yellow-500";
+    "button-transition text-yellow-400 material-symbols-outlined text-2xl sm:text-3xl font-normal hover:text-yellow-500";
 
   if (props.display === "sidebar-hidden ") {
     btnClass =
-      "rotate-180 button-transition text-yellow-400 material-symbols-outlined text-3xl font-normal hover:text-yellow-500";
+      "rotate-180 button-transition text-yellow-400 material-symbols-outlined text-2xl sm:text-3xl font-normal hover:text-yellow-500";
   }
 
   // let btnStyle2 = "keyboard_double_arrow_left";
@@ -31,14 +31,14 @@ const NoteToolbar = (props) => {
               keyboard_double_arrow_left
             </button>
           </div>
-          <h1 className="text-white text-center pl-9 text-2xl font-semibold">
+          <h1 className="text-white text-center p-2 pl-5 sm:pl-10 text-base sm:text-xl lg:text-2xl font-semibold">
             React Notes
           </h1>
           <div className="flex space-x-4">
             <button
               onClick={props.onNewNote}
               title="Create A New Note"
-              className="text-yellow-400 material-symbols-outlined text-3xl font-normal hover:text-yellow-500"
+              className="text-yellow-400 material-symbols-outlined text-2xl sm:text-3xl font-normal hover:text-yellow-500"
             >
               add_circle
             </button>
@@ -47,7 +47,7 @@ const NoteToolbar = (props) => {
                 props.onDeleteNote(props.selectedNoteKey);
               }}
               title="Delete This Note"
-              className=" material-symbols-outlined text-yellow-400 text-3xl font-normal hover:text-yellow-500"
+              className=" material-symbols-outlined text-yellow-400 text-2xl sm:text-3xl font-normal hover:text-yellow-500"
             >
               delete
             </button>
