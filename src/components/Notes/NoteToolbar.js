@@ -31,7 +31,7 @@ const NoteToolbar = (props) => {
               keyboard_double_arrow_left
             </button>
           </div>
-          <h1 className="text-white text-center p-2 pl-5 sm:pl-10 text-base sm:text-xl lg:text-2xl font-semibold">
+          <h1 className="text-white text-center p-2 pl-7 sm:pl-10 text-base sm:text-xl lg:text-2xl font-semibold">
             React Notes
           </h1>
           <div className="flex space-x-4">
