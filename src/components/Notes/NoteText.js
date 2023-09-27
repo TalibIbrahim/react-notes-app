@@ -45,7 +45,7 @@ const NoteText = (props) => {
     }
   };
 
-  const autoSaveInterval = 2000;
+  const autoSaveInterval = 3000;
 
   const autoSave = () => {
     if (userInput.heading !== "") {
